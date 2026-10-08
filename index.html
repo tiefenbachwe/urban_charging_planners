@@ -1097,6 +1097,21 @@
         map.on("layerremove", function(){
             resetLabels([layer_Bezirksgrenzen_Wien_0,layer_Bezirksnamen_Wien_4]);
         });
+			var baseMaps = {
+	        "OpenStreetMap": layer_OpenStreetMap_2
+	    	};
+	
+		    var overlayMaps = {
+		        "Bezirksgrenzen Wien": layer_Bezirksgrenzen_Wien_0,
+		        "E-Auto Anteil pro Einwohner": layer_Zaehlbezirke_EAuto_pro_Einwohner_1,
+		        "Zählgebiete": layer_Zaehlgebiete_3,
+		        "Bezirksnamen Wien": layer_Bezirksnamen_Wien_4,
+		        "Ladestationen Radius 250m": layer_Ladestationen_Radius_250m_5,
+		        "Ladestationen Standorte": layer_Ladestationen_Standorte_6,
+		        "Standwünsche": layer_Standwuensche_Clusterstandortwuensche_cluster_7
+		    };
+	
+		    L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);	
         </script>
     </body>
 </html>
