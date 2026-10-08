@@ -1105,17 +1105,9 @@
             resetLabels([layer_Bezirksgrenzen_Wien_0,layer_Bezirksnamen_Wien_4]);
         });
 						// Layer Visibility Controls
-		document.getElementById('chk_BezirksgrenzenWien').addEventListener('change', function() {
-			 this.checked ? map.addLayer(layer_Bezirksgrenzen_Wien_0) : map.removeLayer(layer_Bezirksgrenzen_Wien_0);
-		});
+	
 		document.getElementById('chk_EAuto').addEventListener('change', function() {
 			this.checked ? map.addLayer(layer_Zaehlbezirke_EAuto_pro_Einwohner_1) : map.removeLayer(layer_Zaehlbezirke_EAuto_pro_Einwohner_1);
-		});
-		document.getElementById('chk_Zaehlgebiete').addEventListener('change', function() {
-			this.checked ? map.addLayer(layer_Zaehlgebiete_3) : map.removeLayer(layer_Zaehlgebiete_3);
-		});
-		document.getElementById('chk_Bezirksnamen').addEventListener('change', function() {
-			this.checked ? map.addLayer(layer_Bezirksnamen_Wien_4) : map.removeLayer(layer_Bezirksnamen_Wien_4);
 		});
 		document.getElementById('chk_Laderadius').addEventListener('change', function() {
 			this.checked ? map.addLayer(layer_Ladestationen_Radius_250m_5) : map.removeLayer(layer_Ladestationen_Radius_250m_5);
