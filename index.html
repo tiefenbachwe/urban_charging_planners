@@ -18,6 +18,16 @@
         </style>
         <title></title>
     </head>
+	<div id="layerControl">
+	    <h4>Layer</h4>
+	    <label><input type="checkbox" id="chk_BezirksgrenzenWien" checked> Bezirksgrenzen Wien</label>
+	    <label><input type="checkbox" id="chk_EAuto" checked> E-Auto Anteil pro Einwohner</label>
+	    <label><input type="checkbox" id="chk_Zaehlgebiete" checked> Zählgebiete</label>
+	    <label><input type="checkbox" id="chk_Bezirksnamen" checked> Bezirksnamen Wien</label>
+	    <label><input type="checkbox" id="chk_Laderadius" checked> Ladestationen Radius 250m</label>
+	    <label><input type="checkbox" id="chk_Ladestandorte" checked> Ladestationen Standorte</label>
+	    <label><input type="checkbox" id="chk_Standwuensche" checked> Standwünsche</label>
+	</div>
     <body>
         <div id="map">
         </div>
@@ -1111,7 +1121,29 @@
 		        "Standwünsche": layer_Standwuensche_Clusterstandortwuensche_cluster_7
 		    };
 	
-		    L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);	
+		    L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+						// Layer Visibility Controls
+			document.getElementById('chk_BezirksgrenzenWien').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Bezirksgrenzen_Wien_0) : map.removeLayer(layer_Bezirksgrenzen_Wien_0);
+			});
+			document.getElementById('chk_EAuto').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Zaehlbezirke_EAuto_pro_Einwohner_1) : map.removeLayer(layer_Zaehlbezirke_EAuto_pro_Einwohner_1);
+			});
+			document.getElementById('chk_Zaehlgebiete').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Zaehlgebiete_3) : map.removeLayer(layer_Zaehlgebiete_3);
+			});
+			document.getElementById('chk_Bezirksnamen').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Bezirksnamen_Wien_4) : map.removeLayer(layer_Bezirksnamen_Wien_4);
+			});
+			document.getElementById('chk_Laderadius').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Ladestationen_Radius_250m_5) : map.removeLayer(layer_Ladestationen_Radius_250m_5);
+			});
+			document.getElementById('chk_Ladestandorte').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Ladestationen_Standorte_6) : map.removeLayer(layer_Ladestationen_Standorte_6);
+			});
+			document.getElementById('chk_Standwuensche').addEventListener('change', function() {
+			    this.checked ? map.addLayer(layer_Standwuensche_Clusterstandortwuensche_cluster_7) : map.removeLayer(layer_Standwuensche_Clusterstandortwuensche_cluster_7);
+			});
         </script>
     </body>
 </html>
